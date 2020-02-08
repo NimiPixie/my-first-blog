@@ -1,17 +1,30 @@
+{% load static %}
 <html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+</head>
 <body>
     <h1>Hi, there!</h1>
-    {% for post in posts %}
-    <div>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p> publicado: {{ post.published_date }}</p>
-        <p>{{ post.text|linebreaksbr }}</p>
-        <br> <img src="https://i.pinimg.com/originals/d4/f1/67/d4f1672cf6495c4f1bb5cceaf67d2203.gif" alt="Funny image">
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                {% for post in posts %}
+                    <div class="post">
+                        <div class="date">
+                        </div>
+                        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                        <p>publicado: {{ post.published_date }}</p>
+                        <p>{{ post.text|linebreaksbr }}</p>
+                        <br> <img src="https://i.pinimg.com/originals/d4/f1/67/d4f1672cf6495c4f1bb5cceaf67d2203.gif" alt="Funny image">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
-    {% endfor %}
     <div>
     <br> <img src="https://cdn102.picsart.com/205175319005202.gif" alt="Funny image">
-    </div>
+
             
 </body>  
 </html>
