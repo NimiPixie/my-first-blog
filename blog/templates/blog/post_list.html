@@ -1,13 +1,17 @@
 <html>
 <body>
+    <h1>Hi, there!</h1>
+    {% for post in posts %}
     <div>
-        <strong>Hi, there!
-            <br>The cake is a lie
-        </strong>
-        <br> <img src="https://lh3.googleusercontent.com/proxy/jimOZYPa3xXCLGtsUoElYgMUiDfgjXXi4NlYU_0cwekNX1JOTIfkjlYK83ZR_uY2FGW3olPIGDilMRVrBmxiODdHf9rvD-6AXx4cN6SVjDRBfk-iDNnKdkpTMI8" alt="Funny image">
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p> publicado: {{ post.published_date }}</p>
+        <p>{{ post.text|linebreaksbr }}</p>
+        <br> <img src="https://i.pinimg.com/originals/d4/f1/67/d4f1672cf6495c4f1bb5cceaf67d2203.gif" alt="Funny image">
     </div>
-      
-
+    {% endfor %}
+    <div>
+    <br> <img src="https://cdn102.picsart.com/205175319005202.gif" alt="Funny image">
+    </div>
             
 </body>  
 </html>
